@@ -85,7 +85,7 @@
         <h3>History</h3>
         <input type='button' value='Add Event' name='addEvent'/>
         <!-- HTML generated here by js due to the variable events -->
-        <input class="button" type="submit" value="Cancel Edit" name = "cancel"/>
+        <input class="button" type="submit" value="Cancel" name = "cancel"/>
         <input class="button" type="submit" value="Submit" name = "submit"/>
     </form>
   </div>
