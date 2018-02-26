@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Avatar Family</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="<?= BASE_URL ?>/public/img/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+  <h1 id="pageHeader">Avatar Family</h1>
+  <!-- Header -->
+  <header class="box">
+    <!-- Bread Crumbs -->
+    <p class="centerV">
+      Home
+    </p>
+
+    <!-- Navbar -->
+    <!-- list items reverse order to order correctly -->
+    <ul class="centerV">
+      <li>
+        <a href="#">Log In/Sign Up</a>
+      </li>
+      <li>
+        <a href="#">About</a>
+      </li>
+    </ul>
+  </header>
+
+  <!-- Intro Box -->
+  <div id="intro" class="box">
+    <!-- Images retrieved from https://vignette.wikia.nocookie.net/p__/images/c/ce/Aang.png/revision/latest?cb=20100122225629&path-prefix=protagonist -->
+    <img src="<?= BASE_URL ?>/public/img/assets/Aang.png" alt="Image of Avatar Character" />
+    <div>
+      <h1>Avatar Family</h1>
+      <h2>Who's related to whom?</h2>
+      <p>
+        This website is a dedicated fan website to connect all the characters in Avatar through parents, spouses, kids, siblings, and more!
+      </p>
+      <input type="text" placeholder="Search">
+    </div>
+    <img src="<?= BASE_URL ?>/public/img/assets/Aang.png" alt="Image of Avatar Character" />
+  </div>
+
+  <br />
+
+  <!-- Log in box -->
+  <div id="login" class="box">
+    <form>
+      <p>
+        Email:
+      </p>
+      <input type="email" name="email" />
+      <p>
+        Password:
+      </p>
+      <input type="password" name="password" />
+      <input type="submit" name="login" value="Log In">
+      <p>or</p>
+      <a id="signup" href="#">Sign Up</a>
+    </form>
+  </div>
+
+  <!-- Credit to original content -->
+  <p>
+    *All content recieved from: <a href="http://avatar.wikia.com/wiki/">Avatar Wikia</a> and relative charater pages. I do not claim any content as my own.
+  </p>
+
+  <!-- Footer -->
+  <footer class="box">
+    <p>
+      <a href="home(loggedin).html">Home</a> |
+      <a href="sokka.html">Random Character</a> |
+      <a href="#">About</a>
+    </p>
+  </footer>
+</body>
+
+</html>

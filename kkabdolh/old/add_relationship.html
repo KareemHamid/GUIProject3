@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Avatar Family</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="<?= BASE_URL ?>/public/img/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+  <h1 id="pageHeader">Avatar Family</h1>
+  <!-- Header -->
+  <header class="box">
+
+    <!-- Bread Crumbs -->
+    <p class="centerV">
+      <a href="home(loggedin).html">Home</a> >
+      <a href="#">Search</a> >
+      <a href="<?= BASE_URL ?>/character/view/sokka">Sokka</a> >
+      <a href="sokka_relationships.html">Sokka Relationships</a> >
+      Sokka Add Relationship
+    </p>
+
+    <!-- Navbar -->
+    <!-- list items reverse order to order correctly -->
+    <ul class="centerV">
+      <li>
+        <a href="home.html">Log Out</a>
+      </li>
+      <li>
+        <a href="#">Account (Username)</a>
+      </li>
+      <li>
+        <a href="#">Key</a>
+      </li>
+      <li>
+        <a href="#">About</a>
+      </li>
+      <li>
+        <a href="home(loggedin).html">Home</a>
+      </li>
+    </ul>
+  </header>
+
+  <!-- Buttons to related pages -->
+  <a class="linkButton" href="<?= BASE_URL ?>/character/view/sokka">Character Page</a>
+  <a class="linkButton" href="sokka_relationships.html"> Relationshps</a>
+
+  <!-- Individual -->
+  <h2 class="centerH">Sokka Add Relationship</h2>
+  <div class="portrait">
+    <img class="centerH" id="relCharacterImg" src="<?= BASE_URL ?>/public/img/assets/Sokka.png" alt="Sokka's Image"/>
+  </div>
+  <br />
+
+  <!-- Tabbed Content, src -> https://www.w3schools.com/howto/howto_js_tabs.asp-->
+  <div class="centerH tab">
+    <button class="tablinks newChar active">New Character</button>
+    <button class="tablinks alreadyExist">Already Existing</button>
+  </div>
+
+
+  <!-- Add new character -->
+  <div class="tabcontent newChar" style="display: block">
+    <!-- Form for adding new family member -->
+    <form>
+      <h3>Basic Information</h3>
+      <label>Relationship:</label>
+      <select name="relationship">
+        <option value="parent">Parent</option>
+        <option value="sibling">Sibling</option>
+        <option value="significant">Significant Other</option>
+        <option value="other">Other</option>
+      </select>
+      <label>First Name:</label>
+      <input type="text" />
+      <label>Last Name:</label>
+      <input type="text" />
+      <label>General Description:</label>
+      <textarea></textarea>
+      <label>Image: </label>
+      <input type="text" />
+      <input class="button" type="button" value="Upload">
+      <h3>Detailed Information</h3>
+      <label>Birth:</label>
+      <input type="text" />
+      <label>Death:</label>
+      <input type="text" />
+      <label>Age:</label>
+      <input type="text" />
+      <label>Era:</label>
+      <input type="text" />
+      <label>Bender:</label>
+      <input type="text" />
+      <label>Bending Specialty:</label>
+      <input type="text" />
+      <label>Tribe/Group:</label>
+      <input type="text" />
+      <label>Occupation/Role:</label>
+      <input type="text" />
+      <input class="centerH button" type="submit" value="Submit" />
+    </form>
+  </div>
+
+  <!-- Already Existing member -->
+  <div class="tabcontent alreadyExist">
+    <form class="centerH">
+      <select name="relationship">
+        <option value="parent">Parent</option>
+        <option value="sibling">Sibling</option>
+        <option value="significant">Significant Other</option>
+        <option value="other">Other</option>
+      </select>
+      <input type="text" placeholder="Search">
+      <input class="button" type="submit" value="Submit" />
+    </form>
+  </div>
+
+  <!-- Credit to original content -->
+  <p>
+    *All content recieved from: <a href="http://avatar.wikia.com/wiki/">Avatar Wikia</a> and relative charater pages. I do not claim any content as my own.
+  </p>
+
+  <!-- Footer -->
+  <footer class="box">
+    <p>
+      <a href="home(loggedin).html">Home</a> |
+      <a href="<?= BASE_URL ?>/character/view/sokka">Random Character</a> |
+      <a href="#">About</a> |
+      <a href="#">Key</a> |
+      <a href="<?= BASE_URL ?>/character/view/sokka">Character Page</a>
+    </p>
+  </footer>
+</body>
+
+</html>
