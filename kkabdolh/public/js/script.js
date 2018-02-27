@@ -2,7 +2,7 @@
   Main scripting file for the website
 */
 $(document).ready(function() {
-
+  
   // Select between tabs using, classes
   $('.tablinks').click (function() {
     var boxChosen = $(this).attr('class').split(' ')[1];
@@ -40,6 +40,7 @@ $(document).ready(function() {
 
   // When Edit Page is clicked, replace gDesc and events with editable text fields
   $('.linkButton').click(function () {
+    
     if (this.text == "Edit Page") {
       var currDesc = $('#gDesc');
       currDesc.children('div').hide()

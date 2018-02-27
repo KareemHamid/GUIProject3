@@ -1,5 +1,5 @@
-  <a class="linkButton" href="<?= BASE_URL ?>/character/view/sokka/relationships/add">Add Relationship</a>
-  <a class="linkButton" href="<?= BASE_URL ?>/character/view/sokka">Character Page</a>
+  <a class="linkButton" href="<?= BASE_URL ?>/character/sokka/relationships/add">Add Relationship</a>
+  <a class="linkButton" href="<?= BASE_URL ?>/character/sokka">Character Page</a>
 
   <!-- Individual -->
   <h2 class="centerH">Sokka's Relationships</h2>

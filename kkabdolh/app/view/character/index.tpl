@@ -1,7 +1,7 @@
-  <h1>Sokka</h1>
+  <h1><?= ucfirst($post->character['name']); ?></h1>
 
   <a class="linkButton" href="#">Edit Page</a>
-  <a class="linkButton" href="<?= BASE_URL ?>/character/view/sokka/relationships"> Relationships</a>
+  <a class="linkButton" href="<?= BASE_URL ?>/character/<?= post['name'] ?>/relationships"> Relationships</a>
 
 
   <!--
@@ -11,25 +11,25 @@
   -->
   <div id="infoCol">
     <div class="portrait">
-      <img style="vertical-align: bottom" alt="Character Image" src="<?= BASE_URL ?>/public/img/assets/Sokka.png"/>
+      <img style="vertical-align: bottom" alt="Character Image" src="<?= BASE_URL ?>/public/img/assets/<?= $post->character['img'] ?>"/>
     </div>
     <table id="gInfo">
       <caption>General Information&nbsp;</caption>
       <tbody>
         <tr>
-          <td>Birth:<br />84 AG</td>
-          <td>Death:<br />Between 158 and 170 AG</td>
+          <td>Birth:<br /><?= $post->character['birth'] ?></td>
+          <td>Death:<br /><?= $post->character['death'] ?></td>
         </tr>
         <tr>
-          <td>Age:<br />15-18</td>
-          <td>Era:<br />AG</td>
+          <td>Age:<br /><?= $post->character['age'] ?></td>
+          <td>Era:<br /><?= $post->character['era'] ?></td>
         </tr>
         <tr>
-          <td>Bender:<br />None</td>
-          <td>Bending Specialty:<br />None</td>
+          <td>Bender:<br /><?= $post->character['bender'] ?></td>
+          <td>Bending Specialty:<br /><?= $post->character['bending_specialty'] ?></td>
         </tr>
         <tr>
-          <td>Tribe/Group:<br />Southern Water Tribe</td>
+          <td>Tribe/Group:<br /><?= $post->character['tribe_group'] ?></td>
           <td>Occupation/Roles:<br />
             <ul>
               <li>
@@ -56,7 +56,7 @@
       <ul>
         <li><a href="#">Aang</a></li>
       </ul>
-    <p><a href="<?= BASE_URL ?>/character/view/sokka/relationships">Relationships</a></p>
+    <p><a href="<?= BASE_URL ?>/character/<?= $post->character['name'] ?>/relationships">Relationships</a></p>
   </div>
 
 <!-- Info recieved from http://avatar.wikia.com/wiki/Sokka
@@ -66,7 +66,7 @@
     <div>
         <h2>General Description</h2>
         <p>
-          Sokka was a Water Tribe warrior of the Southern Water Tribe and the son of Chief Hakoda and Kya. Following the death of his mother and his father's leave for war, Sokka was raised by his grandmother Kanna along with his younger sister Katara.
+          <?= $post->character['general_description'] ?>
         </p>
         <h3>History</h3>
         <h4>Early Life - 84 AG</h4>
@@ -85,7 +85,7 @@
         <h3>History</h3>
         <input type='button' value='Add Event' name='addEvent'/>
         <!-- HTML generated here by js due to the variable events -->
-        <input class="button" type="submit" value="Cancel Edit" name = "cancel"/>
+        <input class="button" type="submit" value="Cancel" name = "cancel"/>
         <input class="button" type="submit" value="Submit" name = "submit"/>
     </form>
   </div>

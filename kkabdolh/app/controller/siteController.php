@@ -1,13 +1,5 @@
 <?php
 
-include_once '../global.php';
-
-// get the identifier for the page we want to load
-$action = $_GET['action'];
-
-// instantiate a SiteController and route it
-$sc = new SiteController();
-$sc->route($action);
 
 class SiteController {
 
@@ -51,13 +43,11 @@ class SiteController {
 	}
 
  	 public function home() {
-		$pageTitle = 'Home';
-		include_once SYSTEM_PATH.'/view/header.tpl';
+		$pageTitle = 'Site';
 		if(!isset($_SESSION['username'])) 
-			include_once SYSTEM_PATH.'/view/home.tpl';
+			include_once SYSTEM_PATH.'/view/site/home.tpl';
 		else
-			include_once SYSTEM_PATH.'/view/home(loggedin).tpl';
-		include_once SYSTEM_PATH.'/view/footer.tpl';
+			include_once SYSTEM_PATH.'/view/site/home(loggedin).tpl';
   }
 
 }
