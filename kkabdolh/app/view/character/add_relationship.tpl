@@ -1,7 +1,7 @@
 
   <!-- Buttons to related pages -->
-  <a class="linkButton" href="<?= BASE_URL ?>/character/view/sokka">Character Page</a>
-  <a class="linkButton" href="<?= BASE_URL ?>/character/view/sokka/relationships"> Relationshps</a>
+  <a class="linkButton" href="<?= BASE_URL ?>/character/sokka">Character Page</a>
+  <a class="linkButton" href="<?= BASE_URL ?>/character/sokka/relationships"> Relationshps</a>
 
   <!-- Individual -->
   <h2 class="centerH">Sokka Add Relationship</h2>

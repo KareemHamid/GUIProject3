@@ -11,7 +11,7 @@
     public static function all() {
       $list = [];
       $db = Db::getInstance();
-      $req = $db->query('SELECT * FROM characters');
+      $req = $db->query('SELECT * FROM character');
 
       foreach($req->fetchAll() as $post) {
         $list[] = new Post($post);
@@ -22,11 +22,10 @@
 
     public static function findCharacter($name) {
       $db = Db::getInstance();
-
-      $req = $db->prepare('SELECT * FROM characters WHERE name = :name');
-      $req->execute(array('name' => $name));
+      $req = $db->prepare('SELECT * FROM `Character` WHERE name = :name');
+      $post = $req->execute(array('name' => $name));
       $post = $req->fetch();
-
+      
       return new Post($post);
     }
   }

@@ -1,16 +1,18 @@
 <?php
   function call($controller, $action) {
-    require_once('controllers/' . $controller . '_controller.php');
+    require_once('controller/' . $controller . 'Controller.php');
 
     switch($controller) {
-      case 'home':
+      case 'site':
         $controller = new SiteController();
       break;
       case 'character':
         // we need the model to query the database later in the controller
-        require_once('models/post.php');
+        require_once('model/post.php');
         $controller = new CharacterController();
       break;
+      default:
+        exit("Fatal Error: Incorrect controller name");
     }
 
     $controller->{ $action }();

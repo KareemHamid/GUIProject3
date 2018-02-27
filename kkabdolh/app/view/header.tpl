@@ -23,8 +23,8 @@ session_start();
     <p class="centerV">
       <a href="<?= BASE_URL ?>">Home</a> >
       <a href="#">Search</a> >
-      <a href="<?= BASE_URL ?>/character/view/sokka">Sokka</a> >
-      <a href="<?= BASE_URL ?>/character/view/sokka/relationships">Sokka Relationships</a> >
+      <a href="<?= BASE_URL ?>/character/sokka">Sokka</a> >
+      <a href="<?= BASE_URL ?>/character/sokka/relationships">Sokka Relationships</a> >
       Sokka Add Relationship
     </p>  
 
