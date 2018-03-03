@@ -3,24 +3,6 @@
 
 class SiteController {
 
-	// route us to the appropriate class method for this action
-	public function route($action) {
-		switch($action) {
-			case 'home':
-				$this->home();
-				break;
-			case 'loginProcess':
-				$username = $_POST['email'];
-				$password = $_POST['password'];
-				$this->loginProcess($username, $password);
-				break;
-			case 'logout':
-				$this->logout();
-				break;
-		}
-
-	}
-
 	public function loginProcess($un, $pw) {
 		$correctUsername = 'admin@vt.edu';
 		$correctPassword = '123';
