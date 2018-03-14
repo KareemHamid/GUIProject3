@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.1.30-MariaDB)
 # Database: avatarFamily
-# Generation Time: 2018-03-14 01:20:19 +0000
+# Generation Time: 2018-03-14 22:43:39 +0000
 # ************************************************************
 
 
@@ -39,7 +39,7 @@ CREATE TABLE `Character` (
   `img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`char_id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `Character` WRITE;
 /*!40000 ALTER TABLE `Character` DISABLE KEYS */;
@@ -67,22 +67,20 @@ CREATE TABLE `Event` (
   `event_id` int(11) NOT NULL AUTO_INCREMENT,
   `char_id` int(11) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `date` varchar(255) DEFAULT NULL,
   `body` text,
   PRIMARY KEY (`event_id`),
-  KEY `char_id` (`char_id`),
-  CONSTRAINT `event_ibfk_1` FOREIGN KEY (`char_id`) REFERENCES `Characters` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  KEY `char_id` (`char_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `Event` WRITE;
 /*!40000 ALTER TABLE `Event` DISABLE KEYS */;
 
-INSERT INTO `Event` (`event_id`, `char_id`, `title`, `date`, `body`)
+INSERT INTO `Event` (`event_id`, `char_id`, `title`, `body`)
 VALUES
-	(1,3,'Early Life','84 AG','Sokka was born at the South Pole to Chief Hakoda and Kya in 84 AG. Growing up as part of a minor tribe that lived in the remains of the Southern Water Tribe\'s ruined capital, Sokka was raised from a young age to be a warrior and possessed much knowledge of Water Tribe weapons and tactics. When he was ten, Sokka witnessed one of the last major Fire Nation raids on his tribe, during which his mother was targeted and killed, leaving him with great hatred for the Fire Nation.'),
-	(2,3,'Helping to Train Team Beifong','101 AG','During the year immediately subsequent to the Hundred Year War, Sokka joined Katara and Aang in the \"Harmony Restoration Movement\" to disassemble the Fire Nation colonies in service of Earth King Kuei.'),
-	(3,4,'Winter','99 AG','One hundred years later, Aang was found and freed from the iceberg by siblings Katara and Sokka of the Southern Water Tribe. He quickly befriended them and almost immediately attracted the attention of Prince Zuko, who was to capture him by order of his father, Fire Lord Ozai. A newly formed Team Avatar set out to find a waterbending master who could teach Katara and Aang, evading Zuko\'s attempts to capture them on their journey to the North Pole. While helping rid Senlin Village of Hei Bai, a spirit that was destroying their village, Aang crossed over to the Spirit World where he met Fang, the animal guide of his predecessor, Avatar Roku. He was instructed to visit an Avatar Temple on Crescent Island during the winter solstice so he could talk with Avatar Roku. Despite a run-in with most of the Fire Sages, a group whose loyalty had reallocated to the Fire Lord, Aang managed to speak with Roku, who warned him about the impending arrival of Sozin\'s Comet, which would grant the Fire Nation enough power to win the War.'),
-	(4,4,'Spring','100 AG','Aang and the others flew to an Earth Kingdom base, from where they were to be escorted to Omashu, but decided to travel alone as the general in charge tried to force Aang into the Avatar State. Upon arrival, they learned that the city had fallen under Fire Nation control. They evacuated the citizens from the city in order to sustain the Omashu Resistance; but, in the process, the governor\'s son, Tom-Tom, followed them out. Team Avatar was sent a messenger hawk saying the governor would trade Bumi for Tom-Tom. However, Azula interfered and their attempt was called off. At that, Aang fought Azula, who deemed it her mission to capture him. Bumi told Aang that he needed to remain in Omashu and instructed the young Avatar to search for an earthbending master who waited and listened to the earth before attacking.[30] While in the city of Gaoling, the team learned about a tournament that housed the best earthbenders in the world which they attended, hoping to find a good earthbending teacher for Aang. After watching many rounds, they witnessed the final fight between one of the popular contestants and the current champion, a blind girl. During her match, Aang realized the girl was the same one he had envisioned while lost in the Foggy Swamp, and noticed her technique of waiting and listening before attacking, thus easily defeating her opponent. The ringmaster offered a sack of gold pieces to anyone who dared to face the \"Blind Bandit\". Aang accepted that challenge in order to talk to the girl, but she ignored him.');
+	(1,3,'Early Life - 84 AG','Sokka was born at the South Pole to Chief Hakoda and Kya in 84 AG. Growing up as part of a minor tribe that lived in the remains of the Southern Water Tribe\'s ruined capiwwtal, Sokka was raised from a young age to be a warrior and possessed much knowledge of Water Tribe weapons and tactics. When he was ten, Sokka witnessed one of the last major Fire Nation raids on his tribe, during which his mother was targeted and killed, leaving him with great hatred for the Fire Nation.'),
+	(2,3,'Helping to Train Team Beifong - 101 AG','During the year immediately subsequent to the Hundred Year War, Sokka joined Katara and Aang in the \"Harmony Restoration Movement\" to disassemble the Fire Nation colonies in service of Earth King Kuei.'),
+	(3,4,'Winter - 99 AG','One hundred years later, Aang was found and freed from the iceberg by siblings Katara and Sokka of the Southern Water Tribe. He quickly befriended them and almost immediately attracted the attention of Prince Zuko, who was to capture him by order of his father, Fire Lord Ozai. A newly formed Team Avatar set out to find a waterbending master who could teach Katara and Aang, evading Zuko\'s attempts to capture them on their journey to the North Pole. While helping rid Senlin Village of Hei Bai, a spirit that was destroying their village, Aang crossed over to the Spirit World where he met Fang, the animal guide of his predecessor, Avatar Roku. He was instructed to visit an Avatar Temple on Crescent Island during the winter solstice so he could talk with Avatar Roku. Despite a run-in with most of the Fire Sages, a group whose loyalty had reallocated to the Fire Lord, Aang managed to speak with Roku, who warned him about the impending arrival of Sozin\'s Comet, which would grant the Fire Nation enough power to win the War.'),
+	(4,4,'Spring -100 AG','Aang and the others flew to an Earth Kingdom base, from where they were to be escorted to Omashu, but decided to travel alone as the general in charge tried to force Aang into the Avatar State. Upon arrival, they learned that the city had fallen under Fire Nation control. They evacuated the citizens from the city in order to sustain the Omashu Resistance; but, in the process, the governor\'s son, Tom-Tom, followed them out. Team Avatar was sent a messenger hawk saying the governor would trade Bumi for Tom-Tom. However, Azula interfered and their attempt was called off. At that, Aang fought Azula, who deemed it her mission to capture him. Bumi told Aang that he needed to remain in Omashu and instructed the young Avatar to search for an earthbending master who waited and listened to the earth before attacking. While in the city of Gaoling, the team learned about a tournament that housed the best earthbenders in the world which they attended, hoping to find a good earthbending teacher for Aang. After watching many rounds, they witnessed the final fight between one of the popular contestants and the current champion, a blind girl. During her match, Aang realized the girl was the same one he had envisioned while lost in the Foggy Swamp, and noticed her technique of waiting and listening before attacking, thus easily defeating her opponent. The ringmaster offered a sack of gold pieces to anyone who dared to face the \"Blind Bandit\". Aang accepted that challenge in order to talk to the girl, but she ignored him.');
 
 /*!40000 ALTER TABLE `Event` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -101,9 +99,9 @@ CREATE TABLE `Relationship` (
   PRIMARY KEY (`id`),
   KEY `char_id` (`char_id`),
   KEY `rel_id` (`rel_id`),
-  CONSTRAINT `relationship_ibfk_1` FOREIGN KEY (`char_id`) REFERENCES `Character` (`char_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `relationship_ibfk_2` FOREIGN KEY (`rel_id`) REFERENCES `Character` (`char_ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+  CONSTRAINT `relationship_ibfk_1` FOREIGN KEY (`char_id`) REFERENCES `Character` (`char_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `relationship_ibfk_2` FOREIGN KEY (`rel_id`) REFERENCES `Character` (`char_id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `Relationship` WRITE;
 /*!40000 ALTER TABLE `Relationship` DISABLE KEYS */;

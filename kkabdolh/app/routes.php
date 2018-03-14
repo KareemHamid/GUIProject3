@@ -3,12 +3,13 @@
     require_once('controller/' . $controller . 'Controller.php');
 
     switch($controller) {
-      case 'site':
+      case 'Site':
         $controller = new SiteController();
       break;
-      case 'character':
+      case 'Character':
         // we need the model to query the database later in the controller
-        require_once('model/character.php');
+        require_once('model/Character.php');
+        require_once('model/Event.php');
         $controller = new CharacterController();
       break;
       default:
@@ -19,8 +20,8 @@
   }
 
   // we're adding an entry for the new controller and its actions
-  $controllers = array('site' => ['home', 'loginProcess', 'logout'],
-                       'character' => ['view', 'relationships', 'add', 'list']);
+  $controllers = array('Site' => ['home', 'loginProcess', 'logout'],
+                       'Character' => ['view', 'relationships', 'add', 'list', 'processEdit', 'processAdd']);
 
   if (array_key_exists($controller, $controllers)) {
     if (in_array($action, $controllers[$controller])) {
@@ -28,6 +29,6 @@
     } else {
       call('site', 'home');
     }
-  } else {
-    call('site', 'come');
+  } else { // Error would go here
+    call('site', 'home');
   }

@@ -1,7 +1,7 @@
 <tr class="miniBio">
   <td>
     <div class="portrait">
-      <img alt="Parent Image" src="<?= BASE_URL ?>/public/img/assets/<?= $char->character['img'];?>"/>
+      <img alt="Character Image" src="<?= BASE_URL ?>/public/img/assets/<?= $char->character['img'];?>"/>
     </div>
     <div>
       <h4>

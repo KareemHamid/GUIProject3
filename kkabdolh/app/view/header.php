@@ -14,23 +14,17 @@
   <h1 id="pageHeader">Avatar Family</h1>
   <!-- Header -->
   <header class="box">
-
-    <!-- Bread Crumbs 
-    <p class="centerV">
-      <a href="<?= BASE_URL ?>">Home</a> >
-      <a href="#">Search</a> >
-      <a href="<?= BASE_URL ?>/character/sokka">Sokka</a> >
-      <a href="<?= BASE_URL ?>/character/sokka/relationships">Sokka Relationships</a> >
-      Sokka Add Relationship
-    </p>  -->
+  
     <p class="centerV">
       <a href="<?= BASE_URL ?>">Home</a> 
     <?php 
       $path = $_SERVER["REQUEST_URI"];
       $crumbs = explode("/", $path);
+      $crumbPath = '';
       for($i = 4; $i < count($crumbs); $i++) {
-    ?>
-      > <a href="<?= BASE_URL ?>"><?= ucfirst(str_replace(array(".php","_"), array(""," "), $crumbs[$i])); ?></a> 
+        $crumbPath .= $crumbs[$i].'/';
+      ?>
+      > <a href="<?= BASE_URL.'/'.$crumbPath ?>"><?= ucfirst(str_replace(array(".php","_"), array(""," "), $crumbs[$i])); ?></a> 
     <?php } ?>
     </p>
 

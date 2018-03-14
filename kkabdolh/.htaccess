@@ -4,12 +4,14 @@ RewriteEngine on
 
 # ErrorDocument 404 /error.php
 
-RewriteRule ^$ app/index.php?controller=site&action=home [QSA,L]
-RewriteRule ^process/?$ app/index.php?controller=site&action=loginProcess [QSA,L]
-RewriteRule ^logout/?$ app/index.php?controller=site&action=logout [QSA,L]
+RewriteRule ^$ app/index.php?controller=Site&action=home [QSA,L]
+RewriteRule ^process/?$ app/index.php?controller=Site&action=loginProcess [QSA,L]
+RewriteRule ^logout/?$ app/index.php?controller=Site&action=logout [QSA,L]
 
 # Characters
-RewriteRule ^characters/?$ app/index.php?controller=character&action=list [QSA,L]
-RewriteRule ^characters/(\w+)/?$ app/index.php?controller=character&action=view&name=$1 [QSA,L]
-RewriteRule ^characters/(\w+)/relationships/?$ app/index.php?controller=character&action=relationships&name=$1 [QSA,L]
-RewriteRule ^characters/(\w+)/relationships/add/?$ app/index.php?controller=character&action=add&name=$1 [QSA,L]
+RewriteRule ^characters/?$ app/index.php?controller=Character&action=list [QSA,L]
+RewriteRule ^characters/(\w+)/?$ app/index.php?controller=Character&action=view&name=$1 [QSA,L]
+RewriteRule ^characters/(\w+)/processEdit/?$ app/index.php?controller=Character&action=processEdit&name=$1 [QSA,L]
+RewriteRule ^characters/(\w+)/relationships/?$ app/index.php?controller=Character&action=relationships&name=$1 [QSA,L]
+RewriteRule ^characters/(\w+)/relationships/add/?$ app/index.php?controller=Character&action=add&name=$1 [QSA,L]
+RewriteRule ^characters/(\w+)/relationships/processAdd/?$ app/index.php?controller=Character&action=processAdd&name=$1 [QSA,L]
