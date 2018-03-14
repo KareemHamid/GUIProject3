@@ -16,19 +16,25 @@
 
   <br />
 
+  <?php if(!isset($_SESSION['email'])) { ?>
   <!-- Log in box -->
-  <div id="login" class="box">
-    <form method="POST" action="<?= BASE_URL ?>/process/">
-      <p>
-        Email:
-      </p>
-      <input type="email" name="email" />
-      <p>
-        Password:
-      </p>
-      <input type="password" name="password" />
-      <input type="submit" name="login" value="Log In">
-      <p>or</p>
-      <a id="signup" href="#">Sign Up</a>
-    </form>
-  </div>
+    <div id="login" class="box">
+      <form method="POST" action="<?= BASE_URL ?>/process/">
+        <p>
+          Email:
+        </p>
+        <input type="email" name="email" />
+        <p>
+          Password:
+        </p>
+        <input type="password" name="password" />
+        <input type="submit" name="login" value="Log In">
+        <p>or</p>
+        <a id="signup" href="#">Sign Up</a>
+      </form>
+    </div>
+  <?php } else { ?>
+    <div class="longAdCont">
+      <img src="<?= BASE_URL ?>/public/img/assets/ad-placeholder-2.jpg" alt="Advertisement" />
+    </div>
+  <?php } ?>

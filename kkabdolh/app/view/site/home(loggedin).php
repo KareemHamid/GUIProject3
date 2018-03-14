@@ -20,3 +20,4 @@
   <div class="longAdCont">
     <img src="<?= BASE_URL ?>/public/img/assets/ad-placeholder-2.jpg" alt="Advertisement" />
   </div>
+  

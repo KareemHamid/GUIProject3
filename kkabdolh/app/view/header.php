@@ -1,12 +1,8 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title><?= $pageTitle ?> | Avatar Family</title>
+  <title>Avatar Family</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="<?= BASE_URL ?>/public/js/jquery-3.3.1.min.js"></script>
@@ -19,30 +15,40 @@ session_start();
   <!-- Header -->
   <header class="box">
 
-    <!-- Bread Crumbs -->
+    <!-- Bread Crumbs 
     <p class="centerV">
       <a href="<?= BASE_URL ?>">Home</a> >
       <a href="#">Search</a> >
       <a href="<?= BASE_URL ?>/character/sokka">Sokka</a> >
       <a href="<?= BASE_URL ?>/character/sokka/relationships">Sokka Relationships</a> >
       Sokka Add Relationship
-    </p>  
+    </p>  -->
+    <p class="centerV">
+      <a href="<?= BASE_URL ?>">Home</a> 
+    <?php 
+      $path = $_SERVER["REQUEST_URI"];
+      $crumbs = explode("/", $path);
+      for($i = 4; $i < count($crumbs); $i++) {
+    ?>
+      > <a href="<?= BASE_URL ?>"><?= ucfirst(str_replace(array(".php","_"), array(""," "), $crumbs[$i])); ?></a> 
+    <?php } ?>
+    </p>
 
     <!-- Navbar -->
     <!-- list items reverse order to order correctly -->
-    <?php if(isset($_SESSION['username'])) { ?>
+    <?php if(isset($_SESSION['email'])) { ?>
       <ul class="centerV">
         <li>
           <a href="<?= BASE_URL ?>/logout">Log Out</a>
         </li>
         <li>
-          <a href="#">Account (<?= $_SESSION['username'] ?>)</a>
+          <a href="#">Account (<?= $_SESSION['email'] ?>)</a>
         </li>
         <li>
           <a href="#">Key</a>
         </li>
         <li>
-          <a href="#">About</a>
+          <a href="<?= BASE_URL ?>/characters">Character List</a>
         </li>
         <li>
           <a href="<?= BASE_URL ?>">Home</a>
@@ -54,7 +60,7 @@ session_start();
           <a href="#">Sign Up</a>
         </li>
         <li>
-          <a href="#">About</a>
+          <a href="<?= BASE_URL ?>/characters">Character List</a>
         </li>
       </ul>
     <?php } ?>

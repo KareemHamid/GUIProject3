@@ -6,17 +6,27 @@ class CharacterController {
 		if (!isset($_GET['name']))
 			return call('site', 'home');
 		$name = $_GET['name'];
-		$pageTitle = ucfirst(strtolower($name));
-		$post = Post::findCharacter($name);
-		require_once(SYSTEM_PATH.'/view/character/index.tpl');
+		$post = Character::findCharacter($name);
+		require_once(SYSTEM_PATH.'/view/characters/index.php');
 	}
 	
-	public function relationships($name) {
-		$pageTitle = 'Relationships';
-		include_once SYSTEM_PATH.'/view/sokka_relationships.tpl';
+	public function relationships() {
+		if (!isset($_GET['name']))
+			return call('site', 'home');
+		$name = $_GET['name'];
+		$list = Character::findRelations($name);
+		include_once SYSTEM_PATH.'/view/characters/relationships.php';
+	}
+
+	public function add() {
+		if (!isset($_GET['name']))
+			return call('site', 'home');
+		$name = $_GET['name'];
+		include_once SYSTEM_PATH.'/view/characters/add_relationship.php';
 	  }
-	  public function add($name) {
-		$pageTitle = 'Add Relationship';
-		include_once SYSTEM_PATH.'/view/add_relationship.tpl';
+	  
+	public function list() {
+		$charList = Character::all();
+		include_once SYSTEM_PATH.'/view/characters/list_page.php';
   	}
 }

@@ -1,8 +1,10 @@
   <h1><?= ucfirst($post->character['name']); ?></h1>
 
-  <a class="linkButton" href="#">Edit Page</a>
-  <a class="linkButton" href="<?= BASE_URL ?>/character/<?= post['name'] ?>/relationships"> Relationships</a>
-
+  <?php if(isset($_SESSION['email'])) { ?>
+    <a class="linkButton" href="#">Edit Page</a>
+  <?php } ?>
+  <a class="linkButton" href="<?= BASE_URL ?>/characters/<?= $post->character['name'] ?>/relationships"> Relationships</a>
+  
 
   <!--
    - Information retrieved from http://avatar.wikia.com/wiki/Sokka
@@ -30,33 +32,14 @@
         </tr>
         <tr>
           <td>Tribe/Group:<br /><?= $post->character['tribe_group'] ?></td>
-          <td>Occupation/Roles:<br />
-            <ul>
-              <li>
-                Warrior
-              </li>
-              <li>
-                Tactician
-              </li>
-              <li>
-                Swordsman
-              </li>
-              <li>
-                Councilman
-              </li>
-              <li>
-                Chief of Southern Water Tribe
-              </li>
-            </ul>
-          </td>
         </tr>
       </tbody>
     </table>
     <p>Avatar(s) During Lifespan:</p>
       <ul>
-        <li><a href="#">Aang</a></li>
+        <li><a href="<?= BASE_URL ?>/characters/aang">Aang</a></li>
       </ul>
-    <p><a href="<?= BASE_URL ?>/character/<?= $post->character['name'] ?>/relationships">Relationships</a></p>
+    <p><a href="<?= BASE_URL ?>/characters/<?= $post->character['name'] ?>/relationships">Relationships</a></p>
   </div>
 
 <!-- Info recieved from http://avatar.wikia.com/wiki/Sokka

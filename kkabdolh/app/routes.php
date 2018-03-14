@@ -8,7 +8,7 @@
       break;
       case 'character':
         // we need the model to query the database later in the controller
-        require_once('model/post.php');
+        require_once('model/character.php');
         $controller = new CharacterController();
       break;
       default:
@@ -20,7 +20,7 @@
 
   // we're adding an entry for the new controller and its actions
   $controllers = array('site' => ['home', 'loginProcess', 'logout'],
-                       'character' => ['view', 'relationships', 'add']);
+                       'character' => ['view', 'relationships', 'add', 'list']);
 
   if (array_key_exists($controller, $controllers)) {
     if (in_array($action, $controllers[$controller])) {

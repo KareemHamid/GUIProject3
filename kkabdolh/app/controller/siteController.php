@@ -1,35 +1,28 @@
 <?php
 
-
 class SiteController {
 
-	public function loginProcess($un, $pw) {
-		$correctUsername = 'admin@vt.edu';
+	public function loginProcess() {
+		$correctEmail = 'admin@vt.edu';
 		$correctPassword = '123';
-		if($un == $correctUsername && $pw == $correctPassword)
+		if($_POST['email'] == $correctEmail && $_POST['password'] == $correctPassword)
 		{
-			session_start();
-			$_SESSION['username'] = $un;
+			$_SESSION['email'] = $_POST['email'];
 		}
 		header('Location: '.BASE_URL.'/');
 	}
 
 	public function logout() {
-		session_start();
-		if (isset($_SESSION['username'])) {
+		if (isset($_SESSION['email'])) {
 			$_SESSION = [];
 			session_unset();
 			session_destroy();
 		}
-		$this->home();
+		header('Location: '.BASE_URL.'/');
+		exit();
 	}
 
  	 public function home() {
-		$pageTitle = 'Site';
-		if(!isset($_SESSION['username'])) 
-			include_once SYSTEM_PATH.'/view/site/home.tpl';
-		else
-			include_once SYSTEM_PATH.'/view/site/home(loggedin).tpl';
-  }
-
+		include_once SYSTEM_PATH.'/view/site/home.php';
+  	}
 }

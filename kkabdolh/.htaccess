@@ -9,6 +9,7 @@ RewriteRule ^process/?$ app/index.php?controller=site&action=loginProcess [QSA,L
 RewriteRule ^logout/?$ app/index.php?controller=site&action=logout [QSA,L]
 
 # Characters
-RewriteRule ^character/(\w+)/?$ app/index.php?controller=character&action=view&name=$1 [QSA,L]
-RewriteRule ^character/(\w+)/relationships/?$ app/index.php?controller=character&action=relationships&name=$1 [QSA,L]
-RewriteRule ^character/(\w+)/relationships/add/?$ app/index.php?controller=character&action=add&name=$1 [QSA,L]
+RewriteRule ^characters/?$ app/index.php?controller=character&action=list [QSA,L]
+RewriteRule ^characters/(\w+)/?$ app/index.php?controller=character&action=view&name=$1 [QSA,L]
+RewriteRule ^characters/(\w+)/relationships/?$ app/index.php?controller=character&action=relationships&name=$1 [QSA,L]
+RewriteRule ^characters/(\w+)/relationships/add/?$ app/index.php?controller=character&action=add&name=$1 [QSA,L]

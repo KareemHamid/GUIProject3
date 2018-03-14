@@ -1,12 +1,12 @@
 
   <!-- Buttons to related pages -->
-  <a class="linkButton" href="<?= BASE_URL ?>/character/sokka">Character Page</a>
-  <a class="linkButton" href="<?= BASE_URL ?>/character/sokka/relationships"> Relationshps</a>
+  <a class="linkButton" href="<?= BASE_URL ?>/character/<?= $name ?>">Character Page</a>
+  <a class="linkButton" href="<?= BASE_URL ?>/character/<?= $name ?>/relationships"> Relationshps</a>
 
   <!-- Individual -->
   <h2 class="centerH">Sokka Add Relationship</h2>
   <div class="portrait">
-    <img class="centerH" id="relCharacterImg" src="<?= BASE_URL ?>/public/img/assets/Sokka.png" alt="Sokka's Image"/>
+    <img class="centerH" id="relCharacterImg" src="<?= BASE_URL ?>/public/img/assets/<?= $name ?>.png" alt="Sokka's Image"/>
   </div>
   <br />
 
@@ -27,6 +27,7 @@
         <option value="parent">Parent</option>
         <option value="sibling">Sibling</option>
         <option value="significant">Significant Other</option>
+        <option value="child">Child</option>
         <option value="other">Other</option>
       </select>
       <label>First Name:</label>
