@@ -1,6 +1,6 @@
 <?php
     require_once('global.php');
-    require_once('connection.php');
+    require_once('db.php');
 
     if (isset($_GET['controller']) && isset($_GET['action'])) {
         $controller = $_GET['controller'];

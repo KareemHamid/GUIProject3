@@ -7,8 +7,8 @@
 <footer class="box">
   <p>
     <a href="<?= BASE_URL ?>">Home</a> |
-    <a href="<?= BASE_URL ?>/character/sokka">Random Character</a> |
-    <a href="#">About</a>
+    <a href="<?= BASE_URL ?>/characters/sokka">Random Character</a> |
+    <a href="<?= BASE_URL ?>/characters">Character List</a> 
   </p>
 </footer>
 </body>
